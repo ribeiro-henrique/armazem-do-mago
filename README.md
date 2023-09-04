@@ -17,12 +17,16 @@ Esta documentação descreve a API RESTful desenvolvida para o Armazém do Mago,
 2. Navegue até o diretório da aplicação:
 
 
-3. Execute o aplicativo:
+3. Execute o aplicativo e teste com o Swagger:
+
+![swagger](https://github.com/ribeiro-henrique/armazem-do-mago/assets/111824151/77eb3323-7e92-4de7-ac5a-2ec9066bd3bb)
 
 
 ### Configuração do Banco de Dados
 
 Para acessar o banco de dados, selecione a aba "view" no Visual Studio e clique em "Sql Server Object Explorer", ou execute o comando "Ctrl+j, Ctrl+s".
+
+![bd](https://github.com/ribeiro-henrique/armazem-do-mago/assets/111824151/c275e818-4386-4ff1-a8ed-cc6f9c2fad02)
 
 ## Endpoints da API
 
@@ -38,6 +42,13 @@ A API possui os seguintes endpoints:
 ## Autenticação
 
 A API utiliza autenticação básica para acessar os endpoints. Certifique-se de fornecer as credenciais ao fazer chamadas à API.
+Após isso, copie o Token de acesso sem as aspas:
+
+![token](https://github.com/ribeiro-henrique/armazem-do-mago/assets/111824151/580da966-8588-47cf-9df8-41907d0ef34a)
+
+Copie e cole o Token junto com a palavra "Bearer", seguida de um espaço, da seguinte maneira:
+
+![bearer](https://github.com/ribeiro-henrique/armazem-do-mago/assets/111824151/9ddc8901-ec1e-4f7f-b0f1-8695fa047194)
 
 ## Estrutura do Banco de Dados
 
