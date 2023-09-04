@@ -1,4 +1,3 @@
-
 using ArmazemDoMago.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -11,30 +10,34 @@ namespace ArmazemDoMago {
         public static void Main(string[] args) {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            // Configuração do aplicativo Web.
 
+            // Configuração do serviço de banco de dados usando Entity Framework Core.
             builder.Services.AddDbContext<ItemContext>(opt =>
                 opt.UseSqlServer(builder.Configuration.GetConnectionString("ItemContext")));
 
+            // Configuração dos serviços da API.
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+            // Configuração do Swagger
             builder.Services.AddEndpointsApiExplorer();
 
             builder.Services.AddSwaggerGen(c => {
-                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme 
-                {
+                // Configuração de definição de segurança Bearer para Swagger.
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme {
                     Name = "Authorization",
                     In = ParameterLocation.Header,
                     Type = SecuritySchemeType.ApiKey,
                     Scheme = "Bearer"
                 });
 
+                // Configuração de requisito de segurança Bearer para Swagger.
                 c.AddSecurityRequirement(new OpenApiSecurityRequirement()
                 {
                 {
                         new OpenApiSecurityScheme
                         {
-                        Reference = new OpenApiReference 
+                        Reference = new OpenApiReference
                         {
                             Type = ReferenceType.SecurityScheme,
                             Id = "Bearer"
@@ -48,8 +51,10 @@ namespace ArmazemDoMago {
                 });
             });
 
+            // Configuração da chave secreta usada para autenticação JWT.
             var key = Encoding.ASCII.GetBytes(Key.Secret);
 
+            // Configuração de autenticação JWT.
             builder.Services.AddAuthentication(x => {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -67,8 +72,10 @@ namespace ArmazemDoMago {
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
+            // Configuração do pipeline de solicitações HTTP.
+
             if (app.Environment.IsDevelopment()) {
+                // Habilita o Swagger e a interface do Swagger no ambiente de desenvolvimento.
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
@@ -76,7 +83,6 @@ namespace ArmazemDoMago {
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 
