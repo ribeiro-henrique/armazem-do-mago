@@ -9,7 +9,7 @@ namespace ArmazemDoMago.Controllers {
         [HttpPost]
         public IActionResult Auth(string name, string password) {
             // Verifica se as credenciais fornecidas são válidas
-            if (name == "henrique" && password == "123456") {
+            if (name == "developer" && password == "backend") {
                 // Gera um token de autenticação válido
                 var token = GenerateToken.GetToken();
 
