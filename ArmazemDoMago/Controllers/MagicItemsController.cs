@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ArmazemDoMago.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ArmazemDoMago.Controllers
 {
@@ -19,8 +20,8 @@ namespace ArmazemDoMago.Controllers
         {
             _context = context;
         }
-
         // GET: api/MagicItems
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MagicItem>>> GetMagicItems() {
             if (_context.MagicItems == null) {
@@ -35,6 +36,7 @@ namespace ArmazemDoMago.Controllers
 
 
         // GET: api/MagicItems/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<MagicItem>> GetMagicItem(int id)
         {
@@ -54,6 +56,7 @@ namespace ArmazemDoMago.Controllers
 
         // PUT: api/MagicItems/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutMagicItem(int id, MagicItem magicItem)
         {
@@ -85,6 +88,7 @@ namespace ArmazemDoMago.Controllers
 
         // POST: api/MagicItems
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<MagicItem>> PostMagicItem(MagicItem magicItem)
         {
@@ -99,6 +103,7 @@ namespace ArmazemDoMago.Controllers
         }
 
         // GET: api/MagicItems/Alert/{itemId}
+        [Authorize]
         [HttpGet("Alert/{itemId}")]
         public async Task<ActionResult<string>> GetItemAlert(int itemId) {
             if (_context.MagicItems == null) {
@@ -122,6 +127,7 @@ namespace ArmazemDoMago.Controllers
 
 
         // DELETE: api/MagicItems/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMagicItem(int id)
         {
