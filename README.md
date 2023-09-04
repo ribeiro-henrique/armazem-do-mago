@@ -41,7 +41,10 @@ A API possui os seguintes endpoints:
 
 ## Autenticação
 
-A API utiliza autenticação básica para acessar os endpoints. Certifique-se de fornecer as credenciais ao fazer chamadas à API.
+A API utiliza autenticação básica para acessar os endpoints. Certifique-se de fornecer as credenciais tal como no exemplo abaixo:
+
+![back](https://github.com/ribeiro-henrique/armazem-do-mago/assets/111824151/7776d430-6dea-4810-a7c3-14db5c4cd68c)
+
 Após isso, copie o Token de acesso sem as aspas:
 
 ![token](https://github.com/ribeiro-henrique/armazem-do-mago/assets/111824151/580da966-8588-47cf-9df8-41907d0ef34a)
