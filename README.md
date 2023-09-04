@@ -8,6 +8,7 @@ Esta documentação descreve a API RESTful desenvolvida para o Armazém do Mago,
 
 - [.NET SDK 6.0 ou 7.0](https://dotnet.microsoft.com/download)
 - Banco de dados (por exemplo, SQL Server, PostgreSQL, SQLite)
+- Preferencialmente fazer uso do [Visual Studio](https://visualstudio.microsoft.com/pt-br/)
 
 ### Instalação
 
