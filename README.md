@@ -33,12 +33,12 @@ Para acessar o banco de dados, selecione a aba "view" no Visual Studio e clique 
 
 A API possui os seguintes endpoints:
 
-- `POST /api/items`: Adiciona um novo item mágico.
-- `PUT /api/items/{id}`: Atualiza as informações de um item mágico existente.
-- `GET /api/items`: Lista todos os itens mágicos.
-- `DELETE /api/items/{id}`: Remove um item mágico.
-- `GET /api/items/{itemName}/alert`: Verifica se o mago tem menos de 3 unidades de um item específico e retorna um alerta.
-- `GET /api/items/sorted`: Lista os itens mágicos classificados por poder mágico, do mais poderoso ao menos poderoso.
+- `POST /api/MagicItems`: Adiciona um novo item mágico.
+- `PUT /api/MagicItems/{id}`: Atualiza as informações de um item mágico existente.
+- `GET /api/MagicItems`: Lista todos os itens mágicos.
+- `DELETE /api/MagicItems/{id}`: Remove um item mágico.
+- `GET /api/MagicItems/Alert/{id}`: Verifica se o mago tem menos de 3 unidades de um item específico e retorna um alerta.
+- `GET /api/MagicItems`: Lista os itens mágicos classificados por poder mágico, do mais poderoso ao menos poderoso.
 
 ## Autenticação
 
